@@ -1,0 +1,72 @@
+struct User {
+  int id;
+  string name;
+  string email;
+  string password;
+  datetime created_on;
+  datetime modified_on;
+};
+
+struct Wallet {
+  int id;
+  int user_id;
+  int cryptocurrency_id;
+  float balance;
+  datetime created_on;
+  datetime modified_on;
+};
+
+struct Cryptocurrency {
+  int id;
+  string name;
+  string symbol;
+  datetime created_on;
+  datetime modified_on;
+};
+
+struct RealMoneyWallet {
+  int id;
+  int user_id;
+  string currency; // the currency used to store real money, e.g. USD, EUR, etc.
+  float balance;
+  datetime created_on;
+  datetime modified_on;
+};
+
+struct Transaction {
+  int id;
+  int user_id;
+  int wallet_id;
+  int cryptocurrency_id;
+  string type; // "deposit", "withdrawal", "buy", "sell"
+  float amount;
+  datetime created_on;
+  datetime modified_on;
+  string payment_method; // the payment method used for the transaction
+  float payment_amount; // the amount paid for the transaction
+  string payment_status; // the status of the payment, e.g. "pending", "completed", "failed"
+};
+
+struct Order {
+  int id;
+  int user_id;
+  int cryptocurrency_id;
+  float amount;
+  float price;
+  string type; // "buy" or "sell"
+  datetime created_on;
+  datetime modified_on;
+  string status; // "open", "closed"
+  boolean market_true;
+};
+
+struct Trade {
+  int id;
+  int buyer_id;
+  int seller_id;
+  int cryptocurrency_id;
+  float amount;
+  float price;
+  datetime created_on;
+  datetime modified_on;
+};
